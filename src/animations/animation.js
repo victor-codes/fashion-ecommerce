@@ -100,12 +100,12 @@ export function cardAnim(class1) {
 export function onDragDrop(class1) {
   const tl = gsap.timeline();
   tl.to(class1, {
-    duration: 1,
+    duration: 0.5,
     opacity: 0,
     rotation: -15,
     y: "-100%",
     x: "-200%",
-    ease: "power2.out",
+    ease: "power2.in",
   });
 
   return tl;
@@ -127,10 +127,10 @@ export function drag(class1) {
       return;
     } else {
       Draggable.create(target, {
-        type: "x,y",
+        type: "x",
         dragResistance: 0.7,
         minimumMovement: 10,
-        bounds: { minX: -30, maxX: 0, minY: 0, maxY: -50 },
+        bounds: { minX: 0, maxX: 0 },
         inertia: true,
         zIndexBoost: false,
         onDragEnd() {
