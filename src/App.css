@@ -1,6 +1,5 @@
-.App {
-  text-align: center;
-}
+/* .App {
+} */
 
 .App-logo {
   height: 40vmin;
@@ -11,6 +10,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 .App-header {
@@ -35,4 +39,253 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.absolute {
+  position: relative;
+  display: flex;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  height: 100%;
+  /* max-width: 100vw; */
+  max-height: 100vh;
+  background: #e4a502;
+  overflow: hidden;
+  will-change: background;
+  transition: background 400ms ease-out;
+}
+header {
+  color: #ffffff;
+}
+h1 {
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+h1 span {
+  font-size: 29px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 33px 0;
+}
+nav div {
+  display: inherit;
+  align-items: inherit;
+}
+nav:nth-child(1) p,
+nav:last-child a:last-child {
+  margin: 0 0 0 52px;
+}
+
+nav a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 175%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero_text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 175%;
+  letter-spacing: 0.02em;
+  width: 100%;
+  height: 100%;
+  max-width: 354px;
+  margin: 0;
+  color: #fbfcfe;
+}
+
+.cta_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop {
+  overflow: hidden;
+  position: absolute;
+}
+.shop_btn {
+  display: block;
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  border: 1px solid #ffffff;
+}
+button:focus {
+  outline: none;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button span {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.vid_btn {
+  display: flex;
+  align-items: center;
+}
+
+.vid_btn svg {
+  margin-right: -16px;
+}
+
+.vid_btn span {
+  left: 75px;
+  width: max-content;
+  display: block;
+}
+
+.card_mother_container {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 44px);
+  z-index: 0;
+}
+
+.card_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 712px;
+  height: 501px;
+  position: absolute;
+  cursor: grab;
+  overflow: hidden;
+}
+
+.card_container :nth-child(1) {
+  background-position: top;
+  transform: rotate(6deg) !important;
+  pointer-events: none;
+  opacity: 1 !important;
+}
+.card_container :nth-child(2) {
+  will-change: transform;
+  transition: transform 400ms ease-out;
+  transform: rotate(0deg) !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+.card_container :nth-child(3) {
+  opacity: 1 !important;
+  transform: translate3d(0, 0%, 0px) rotate(-6.0001deg);
+}
+
+main {
+  height: calc(100vh - 44px);
+}
+
+.index {
+  z-index: 500;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  margin-top: calc(501px + 114px);
+}
+
+h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 127px;
+  line-height: 127px;
+  display: block;
+  color: #ffffff;
+  margin: 0;
+}
+
+h2 > * {
+  letter-spacing: -0.0345em !important;
+  display: block;
+}
+
+.hero_flex {
+  position: absolute;
+  right: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1408px;
+  overflow: hidden;
+}
+.over_hidden {
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+.over_hidden span {
+  display: block;
+}
+.hero_one {
+  padding-right: 97px;
+  top: 45%;
+  transform: translate(50%, -50%);
+}
+.hero_two {
+  margin-top: -50px;
+  padding-left: 110px;
+  top: 62%;
+  transform: translate(50%, -50%);
+}
+.hero_two h2 {
+  margin-left: -96px;
+}
+.card {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero_cotainer {
+  position: fixed;
+  display: flex;
+  display: none;
+  width: 100vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  height: calc(100vh - 44px);
+}
+span {
+  letter-spacing: -0.001em;
+}
+p {
+  letter-spacing: 0.02em;
+}
+
+.first_text,
+.hero_text,
+.third,
+.shop span,
+.shop_btn,
+.path,
+.path1,
+.over_hidden span {
+  will-change: transform;
 }
