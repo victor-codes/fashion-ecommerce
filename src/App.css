@@ -3,6 +3,9 @@
 *::before {
   box-sizing: border-box;
 }
+.pos--abs {
+  position: absolute;
+}
 
 .absolute {
   position: relative;
@@ -17,11 +20,14 @@ body {
   max-height: 100vh;
   background: #e4a502;
   overflow: hidden;
+  will-change: background;
   transition: background 400ms ease-out;
 }
+
 header {
   color: #ffffff;
 }
+
 h1 {
   font-size: 22px;
   line-height: 22px;
@@ -52,7 +58,7 @@ nav a {
   color: inherit;
 }
 
-.hero_text {
+.hero__text {
   font-size: 15px;
   line-height: 175%;
   letter-spacing: 0.02em;
@@ -63,7 +69,7 @@ nav a {
   color: #fbfcfe;
 }
 
-.cta_container {
+.cta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +78,7 @@ nav a {
   overflow: hidden;
   position: absolute;
 }
-.shop_btn {
+.shop__btn {
   display: block;
   width: 180px;
   height: 180px;
@@ -94,22 +100,22 @@ button span {
   color: #ffffff;
 }
 
-.vid_btn {
+.vid__btn {
   display: flex;
   align-items: center;
 }
 
-.vid_btn svg {
+.vid__btn svg {
   margin-right: -16px;
 }
 
-.vid_btn span {
+.vid__btn span {
   left: 75px;
   width: max-content;
   display: block;
 }
 
-.card_mother_container {
+.card {
   position: fixed;
   width: 100vw;
   display: flex;
@@ -119,37 +125,36 @@ button span {
   z-index: 0;
 }
 
-.card_container {
+.card__container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.card {
+.card__element {
   width: 712px;
   height: 501px;
   position: absolute;
   overflow: hidden;
-  touch-action: none;
-  -moz-user-select: none;
-  user-select: none;
   cursor: grab;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
-.card_container :nth-child(1) {
+.card__container :nth-child(1) {
   background-position: top;
   transform: rotate(6deg) !important;
   pointer-events: none;
   opacity: 1 !important;
 }
-.card_container :nth-child(2) {
+.card__container :nth-child(2) {
   will-change: transform;
   transition: transform 400ms ease-out;
   transform: rotate(0deg) !important;
   opacity: 1 !important;
   pointer-events: none;
 }
-.card_container :nth-child(3) {
+.card__container :nth-child(3) {
   opacity: 1 !important;
   transform: translate3d(0, 0%, 0px) rotate(-6.0001deg);
 }
@@ -160,10 +165,9 @@ main {
 
 .index {
   z-index: 500;
-  position: absolute;
   right: 50%;
   transform: translateX(50%);
-  margin-top: calc(501px + 114px);
+  top: calc(75%);
 }
 
 h2 {
@@ -180,8 +184,7 @@ h2 > * {
   display: block;
 }
 
-.hero_flex {
-  position: absolute;
+.hero__flex {
   right: 50%;
   display: flex;
   align-items: center;
@@ -190,47 +193,31 @@ h2 > * {
   max-width: 1408px;
   overflow: hidden;
 }
-.over_hidden {
+.over__hidden {
   overflow-x: visible;
   overflow-y: hidden;
 }
-.over_hidden span {
+.over__hidden span {
   display: block;
 }
-.hero_one {
+.hero__one {
   padding-right: 97px;
   top: 45%;
   transform: translate(50%, -50%);
 }
-.hero_two {
+.hero__two {
   margin-top: -50px;
   padding-left: 110px;
   top: 62%;
   transform: translate(50%, -50%);
 }
-.hero_two h2 {
+.hero__two h2 {
   margin-left: -96px;
 }
-.card {
-  object-fit: cover;
-  object-position: center top;
-}
 
-.hero_cotainer {
-  position: fixed;
-  display: flex;
-  display: none;
-  width: 100vw;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 30px;
-  height: calc(100vh - 44px);
-}
 span {
   letter-spacing: -0.001em;
 }
 p {
   letter-spacing: 0.02em;
 }
-

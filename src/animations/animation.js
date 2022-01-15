@@ -47,6 +47,7 @@ export function ctaBtn(class1, class2) {
     ease: "power2.out",
   });
 }
+
 export function vidBtnAnim(class1, class2, class3) {
   const tl = gsap.timeline({ delay: 2 });
   tl.from(class1, {
@@ -92,7 +93,7 @@ export function cardAnim(class1) {
     backgroundRepeat: "no-repeat",
     duration: 0.6,
     delay: 1.8,
-    ease: "power2.out",
+    ease: "power2",
   });
   return tl;
 }
@@ -113,16 +114,16 @@ export function onDragDrop(class1) {
 
 export function drag(class1) {
   const stack = document.querySelector(class1);
-  const background = ["#e4a502", "#F95F2F", "#C081CD"];
 
+  const background = ["#e4a502", "#F95F2F", "#C081CD"];
   [...stack.children].forEach((i) => {
     stack.append(i);
   });
 
   function swap(e) {
+    let card = document.querySelector(".card__container").lastChild;
     const target = e.target;
-    const key = Number(target.getAttribute("data-key"));
-    let card = document.querySelector(".card_container").lastChild;
+    const key = Number(target.getAttribute("data-key") || 1);
     if (target !== card) {
       return;
     } else {
@@ -131,7 +132,6 @@ export function drag(class1) {
         dragResistance: 0.7,
         minimumMovement: 10,
         bounds: { minX: 0, maxX: 0 },
-        inertia: true,
         zIndexBoost: false,
         onDragEnd() {
           let drop = onDragDrop(target);
@@ -145,6 +145,5 @@ export function drag(class1) {
       });
     }
   }
-
-  stack.addEventListener("drag", swap);
+  stack.addEventListener("click", swap);
 }

@@ -1,17 +1,17 @@
 import React from "react";
 
-function Button({ primary, className }) {
+function Button({ primary }) {
   return (
     <>
       {primary ? (
-        <button className={`cta_container ${className}`}>
-          <div className="shop_btn"></div>
+        <button className="cta index pos--abs">
+          <div className="shop__btn"></div>
           <div className="shop">
             <span>shop now</span>
           </div>
         </button>
       ) : (
-        <button className={`vid_btn ${className}`}>
+        <button className="vid__btn">
           <div>
             <svg
               width="88"
@@ -32,7 +32,7 @@ function Button({ primary, className }) {
               />
             </svg>
           </div>
-          <div className="over_hidden">
+          <div className="over__hidden">
             <span>watch brand video</span>
           </div>
         </button>
